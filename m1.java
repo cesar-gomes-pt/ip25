@@ -133,6 +133,7 @@ class m1 {
         // devolve a soma total
         return s;
     }
+
     // solução alternativa #1 aplicando directamente a fómula de cálculo :
     //
     //int sumNaturals(int n) {
@@ -144,6 +145,12 @@ class m1 {
     //  assert n>=0;
     //  return (n * (n + 1) / 2);
     //}
+    boolean isVowel(char c) {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+            return true;
+        else
+            return false;
+    }
 }
 
 class IrsUtil {
