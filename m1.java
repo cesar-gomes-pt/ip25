@@ -151,6 +151,11 @@ class m1 {
         else
             return false;
     }
+
+    boolean inOrder(int a, int b, int c) {
+        // Só devolve true quando a < b e b < c. E não permite números iguais nem desordenados.
+        return a < b && b < c;
+    }
 }
 
 class IrsUtil {
