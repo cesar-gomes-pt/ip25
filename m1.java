@@ -160,6 +160,10 @@ class m1 {
     boolean isIncluded(int n, int min, int max) {
         return (n >= min && n <= max);
     }
+
+    boolean isExcluded(int n, int min, int max) {
+        return (n < min || n > max);
+    }
 }
 
 class IrsUtil {
