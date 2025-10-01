@@ -168,6 +168,10 @@ class m1 {
     boolean xor(boolean a, boolean b) {
         return (a != b);
     }
+
+    boolean sameSign(int a, int b) {
+        return (a < 0 && b < 0 || a > 0 && b > 0);
+    }
 }
 
 class IrsUtil {
