@@ -164,6 +164,10 @@ class m1 {
     boolean isExcluded(int n, int min, int max) {
         return (n < min || n > max);
     }
+
+    boolean xor(boolean a, boolean b) {
+        return (a != b);
+    }
 }
 
 class IrsUtil {
