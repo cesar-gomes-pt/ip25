@@ -156,6 +156,10 @@ class m1 {
         // Só devolve true quando a < b e b < c. E não permite números iguais nem desordenados.
         return a < b && b < c;
     }
+
+    boolean isIncluded(int n, int min, int max) {
+        return (n >= min && n <= max);
+    }
 }
 
 class IrsUtil {
