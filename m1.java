@@ -118,6 +118,32 @@ class m1 {
             return 0.0;
         }
     }
+
+    int sumNaturals(int n) {
+        // soma começa em zero "0"
+        int s = 0;
+        // variável contador que começa em 1
+        int k = 1;
+        while (k <= n) {
+            // soma o valor actual de "k"
+            s = s + k;
+            // avança o contador para o valor seguinte : k = 1 (inicial), 2, 3,..., até "n"
+            k++;
+        }
+        // devolve a soma total
+        return s;
+    }
+    // solução alternativa #1 aplicando directamente a fómula de cálculo :
+    //
+    //int sumNaturals(int n) {
+    //  return n * (n + 1) / 2;
+    //}
+    // solução alternativa #2 aplicando directamente a fómula de cálculo :
+    //
+    //int sumNaturals(int n) {
+    //  assert n>=0;
+    //  return (n * (n + 1) / 2);
+    //}
 }
 
 class IrsUtil {
