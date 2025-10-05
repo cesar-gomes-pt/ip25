@@ -14,4 +14,13 @@ class m2 {
         }
         return n;
     }
+
+    int lastDigit(int n) {
+        int x = 10;
+        while (n > x) {
+            // Em programação (e em matemática de inteiros), o resto da divisão inteira por 10 é obtido com o operador módulo (%):
+            n = n % 10;
+        }
+        return n;
+    }
 }
