@@ -6,4 +6,12 @@ class m2 {
         v = v / 10;
         v = v / 10;
     }
+
+    int firstDigit(int n) {
+        int x = 10;
+        while (n > x) {
+            n = n / 10;
+        }
+        return n;
+    }
 }
