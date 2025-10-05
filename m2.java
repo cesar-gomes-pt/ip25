@@ -46,4 +46,22 @@ class m2 {
         assert min >= 0 && max >= 0;
         return intervalo;
     }
+
+    int multiplyDigits(int n) {
+        // garante que n é um número natural (>=0)
+        assert n >= 0;
+        if (// caso excepcional, se o número é 0 (zero), irá devolver 0 (zero)
+        n == 0)
+            return 0;
+        // tem de começar em "1" para pode multplicar
+        int produto = 1;
+        while (n > 0) {
+            // último algarismo
+            int algarismo = n % 10;
+            produto = produto * algarismo;
+            // remove o último algarismo
+            n = n / 10;
+        }
+        return produto;
+    }
 }
