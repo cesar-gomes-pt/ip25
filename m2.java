@@ -23,4 +23,21 @@ class m2 {
         }
         return n;
     }
+
+    static void naturalsIterator() {
+        int i = 1;
+        while (i < 5) {
+            i = i + 1;
+        }
+    }
+
+    int sumNaturals(int max) {
+        int s = 0;
+        int n = 1;
+        while (n <= max) {
+            s = s + n;
+            n++;
+        }
+        return s;
+    }
 }
