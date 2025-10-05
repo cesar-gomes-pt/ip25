@@ -40,4 +40,10 @@ class m2 {
         }
         return s;
     }
+
+    int intervalLength(int min, int max) {
+        int intervalo = max - min + 1;
+        assert min >= 0 && max >= 0;
+        return intervalo;
+    }
 }
