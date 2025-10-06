@@ -64,4 +64,14 @@ class m2 {
         }
         return produto;
     }
+
+    static void reverseIteration() {
+        // começa em 5
+        int x = 5;
+        while (x > 0) {
+            // enquanto x >= 0
+            // decrementa 1
+            x = x - 1;
+        }
+    }
 }
