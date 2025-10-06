@@ -74,4 +74,32 @@ class m2 {
             x = x - 1;
         }
     }
+
+    int factorial(int n) {
+        assert n >= 0;
+        int f = 1;
+        int i = 1;
+        while (i <= n) {
+            f = f * i;
+            i = i + 1;
+        }
+        return f;
+    }
+
+    int powerOfTwo(int e) {
+        assert e >= 0;
+        int b = 2;
+        return (int) Math.pow(2, e);
+    }
+    /* solução alternativa :
+ int powerOfTwo(int e) {
+     assert e >= 0;
+     int p = 1;
+     int n = e;
+     while(n > 0) {
+         p = p * 2;
+         n = n - 1;
+     }
+     return p;
+}*/
 }
