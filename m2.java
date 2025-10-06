@@ -133,4 +133,20 @@ class m2 {
             p = p + 2;
         }
     }
+
+    int sumEvenBetween(int min, int max) {
+        int n = min;
+        int sum = 0;
+        while (n <= max) {
+            if (n % 2 == 0) {
+                // verifica se é par
+                // soma o próprio número
+                sum = sum + n;
+            }
+            // avança para o próximo número
+            n++;
+        }
+        // retorna a soma dos números pares dentro do intervalo [min,max]
+        return sum;
+    }
 }
