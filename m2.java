@@ -91,6 +91,7 @@ class m2 {
         int b = 2;
         return (int) Math.pow(2, e);
     }
+
     /* solução alternativa :
  int powerOfTwo(int e) {
      assert e >= 0;
@@ -102,4 +103,34 @@ class m2 {
      }
      return p;
 }*/
+    boolean isMultiple(int x, int y) {
+        int soma = 0;
+        while (soma < x) {
+            // acumula y
+            soma = soma + y;
+        }
+        // verdadeiro, se chegou exatamente a x
+        return soma == x;
+    }
+
+    int intDivision(int x, int y) {
+        // garantimos números válidos com esta asserção
+        assert y >= 0 && x > 0;
+        int quociente = 0;
+        while (x >= y) {
+            // enquando o dividendo "x" for maior do que o divisor "y"
+            // tira uma vez o divisor "y"
+            x = x - y;
+            // conta mais uma subtração
+            quociente++;
+        }
+        return quociente;
+    }
+
+    static void iterationStepTwo() {
+        int p = 2;
+        while (p < 10) {
+            p = p + 2;
+        }
+    }
 }
