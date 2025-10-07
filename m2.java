@@ -149,4 +149,22 @@ class m2 {
         // retorna a soma dos números pares dentro do intervalo [min,max]
         return sum;
     }
+
+    boolean containsZero(int n) {
+        // o próprio número "n" é pois zero (0)
+        if (n == 0)
+            return true;
+        while (n > 0) {
+            // último dígito
+            int digito = n % 10;
+            if (digito == 0) {
+                // encontrou um zero (0)
+                return true;
+            }
+            // removeu o último dígito
+            n = n / 10;
+        }
+        // não enconbtrou um zero (0)
+        return false;
+    }
 }
