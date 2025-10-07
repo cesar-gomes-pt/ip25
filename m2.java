@@ -172,15 +172,21 @@ class m2 {
         assert d >= 0 && d <= 9 : "d deve ser um dígito entre 0 e 9";
         int count = 0;
         // caso especial: se o número for 0
+        // se o número "n" é zero (0) e d = 0 retorna 1 dígito zero (0)
         if (n == 0 && d == 0)
             return 1;
         while (n > 0) {
+            // último dígito
             int digito = n % 10;
             if (digito == d) {
+                // encontrou o dígito "d"
+                // incrementa a contagem
                 count = count + 1;
             }
+            // removeu o último dígito
             n = n / 10;
         }
+        // retorna a contagem do número de dígito "d"
         return count;
     }
 }
