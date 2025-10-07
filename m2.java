@@ -167,4 +167,16 @@ class m2 {
         // não enconbtrou um zero (0)
         return false;
     }
+
+    int countDigit(int n, int d) {
+        int count = 0;
+        while (n > 0) {
+            int digito = n % 10;
+            if (digito == d) {
+                count = count + 1;
+            }
+            n = n / 10;
+        }
+        return count;
+    }
 }
