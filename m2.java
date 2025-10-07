@@ -169,7 +169,11 @@ class m2 {
     }
 
     int countDigit(int n, int d) {
+        assert d >= 0 && d <= 9 : "d deve ser um dígito entre 0 e 9";
         int count = 0;
+        // caso especial: se o número for 0
+        if (n == 0 && d == 0)
+            return 1;
         while (n > 0) {
             int digito = n % 10;
             if (digito == d) {
