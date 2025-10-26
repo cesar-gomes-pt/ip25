@@ -206,6 +206,7 @@ class m2 {
         // Não encontrou o dígito depois de verificar todos os dígitos
         return false;
     }
+
     // Solução Alternativa e melhor !
     // boolean existsDigit(int n, int d) {
     //     assert n >= 0 && d >= 0 && d <= 9;
@@ -234,4 +235,11 @@ class m2 {
     //     }
     //     return false;                     // não encontrou
     // }
+    char nextLetter(char letra) {
+        if (letra == 'z') {
+            return 'a';
+        } else {
+            return (char) (letra + 1);
+        }
+    }
 }
