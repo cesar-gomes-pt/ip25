@@ -225,13 +225,13 @@ class m2 {
     // boolean existsDigit(int n, int d) {
     //     assert n >= 0 && d >= 0 && d <= 9 : "n deve ser >= 0 e d entre 0 e 9";
     //
-    //     if (n == 0) return d == 0;     // único dígito é 0
+    //     if (n == 0) return d == 0;        // único dígito é 0
     //
     //     while (n > 0) {
-    //         int dig = n % 10;          // último dígito
-    //         if (dig == d) return true; // encontrado
-    //         n = n / 10;                // remove o último dígito
+    //         int digito = n % 10;          // último dígito
+    //         if (digito == d) return true; // encontrado
+    //         n = n / 10;                   // remove o último dígito
     //     }
-    //     return false;                  // não encontrou
+    //     return false;                     // não encontrou
     // }
 }
