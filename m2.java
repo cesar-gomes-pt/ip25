@@ -207,3 +207,20 @@ class m2 {
         return false;
     }
 }
+
+// Solução Alternativa e melhor !
+//
+// boolean existsDigit(int n, int d) {
+//      assert n >= 0 && d >= 0 && d <= 9;
+//      if(n == d) {
+//          return true;
+//      }
+//     int x = n;
+//      while(x > 0) {
+//          if(x % 10 == d) {
+//              return true;
+//          }
+//          x = x / 10;
+//      }
+//      return false;
+//  }
