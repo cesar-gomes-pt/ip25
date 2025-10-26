@@ -189,4 +189,21 @@ class m2 {
         // retorna a contagem do número de dígito "d"
         return count;
     }
+
+    boolean existsDigit(int n, int d) {
+        if (n < 0) {
+            // Lida com números negativos
+            n = -n;
+        }
+        while (n > 0) {
+            if (n % 10 == d) {
+                // Encontrou o dígito
+                return true;
+            }
+            // Remove o último dígito do número
+            n = n / 10;
+        }
+        // Não encontrou o dígito depois de verificar todos os dígitos
+        return false;
+    }
 }
