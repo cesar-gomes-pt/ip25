@@ -294,6 +294,8 @@ class m2 {
     // O valor final de invertido é o número invertido :
     //
     // invertInt(1234)-> 4321 ou  invertInt(12345)-> 54321
+    // Esta solução que usa recursividade simples está correta mas é muito ineficiente, pois esta versão tem complexidade exponencial !
+    // por repetir cálculos desnecessáriamente
     int fib(int n) {
         if (n <= 1) {
             return n;
@@ -301,7 +303,7 @@ class m2 {
             return fib(n - 1) + fib(n - 2);
         }
     }
-    // Solução alternativa mais complexa com recurso a um ciclo while :
+    // Solução alternativa mais complexa com recurso a um ciclo 'while' mas mais eficiente :
     //
     // int fib(int n) {
     //
@@ -321,5 +323,19 @@ class m2 {
     //        i++;
     //    }
     //    return resultado;
+    // }
+    // Solução interativa com ciclo 'for' ;
+    //
+    // int fib(int n) {
+    //    if (n <= 1) return n;
+    //    int anterior = 0; // F(0)
+    //    int atual    = 1; // F(1)
+    //    int resultado = 0;
+    //    for (int i = 2; i <= n; i++) {
+    //        resultado = anterior + atual; // F(i)
+    //        anterior  = atual;
+    //        atual     = resultado;
+    //    }
+    //    return resultado; // F(n)
     // }
 }
