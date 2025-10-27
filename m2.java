@@ -252,6 +252,7 @@ class m2 {
         }
         return a;
     }
+
     // int gcd(int a, int b) {
     //
     //    assert a >= 0 && b >= 0 : "a e b devem ser >= 0"; // opcional: garantir naturais
@@ -267,4 +268,29 @@ class m2 {
     //    }
     //    return a;
     // }
+    int invertInt(int n) {
+        int invertido = 0;
+        while (n > 0) {
+            int ultimo_digito = n % 10;
+            invertido = invertido * 10 + ultimo_digito;
+            n = n / 10;
+        }
+        return invertido;
+    }
+    // Algoritmo:
+    //
+    // 1.Inicializar uma variável invertido com o valor 0.
+    //
+    // 2. Repitir enquanto n for maior que 0 (ciclo while) :
+    //
+    // 2 a) Extrair o último dígito de n usando a operação de módulo: digito = n % 10.
+    //
+    // 2 b) Adicionar este dígito a invertido e deslocar os dígitos existentes uma posição para a esquerda, multiplicando invertido por 10 e somando o novo dígito:
+    //      invertido = invertido * 10 + digito.
+    //
+    // 2 c) Remova o último dígito de n usando a divisão inteira por 10: n = n / 10.
+    //
+    // O valor final de invertido é o número invertido :
+    //
+    // invertInt(1234)-> 4321 ou  invertInt(12345)-> 54321
 }
