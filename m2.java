@@ -277,6 +277,7 @@ class m2 {
         }
         return invertido;
     }
+
     // Algoritmo:
     //
     // 1.Inicializar uma variável invertido com o valor 0.
@@ -293,4 +294,22 @@ class m2 {
     // O valor final de invertido é o número invertido :
     //
     // invertInt(1234)-> 4321 ou  invertInt(12345)-> 54321
+    int fib(int n) {
+        if (n <= 1) {
+            // Casos base para n = 0 e n = 1
+            return n;
+        }
+        int termo_anterior = 0;
+        int termo_atual = 1;
+        int resultado = 0;
+        // começa a partir do segundo termo (índice 2)
+        int i = 2;
+        while (i <= n) {
+            resultado = termo_anterior + termo_atual;
+            termo_anterior = termo_atual;
+            termo_atual = resultado;
+            i++;
+        }
+        return resultado;
+    }
 }
