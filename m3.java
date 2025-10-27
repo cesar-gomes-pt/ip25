@@ -31,3 +31,24 @@ class MathUtil {
         }
     }
 }
+
+class IrsHelper {
+
+    static double irsTaxByIncome(int income) {
+        int group = IrsUtil.irsGroup(income);
+        // 1) Devolve a taxa de IRS correspondente ao rendimento
+        return IrsUtil.irsTax(group);
+    }
+
+    static int groupByTax(double tax) {
+        for (int group = 1; group <= 4; group++) {
+            if (IrsUtil.irsTax(group) == tax) {
+                // comparação direta
+                // 2) Devolve o grupo correspondente a uma taxa (ou 0 se inválida)
+                return group;
+            }
+        }
+        // taxa não pertence a nenhum grupo válido
+        return 0;
+    }
+}
