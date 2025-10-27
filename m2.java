@@ -242,4 +242,29 @@ class m2 {
             return (char) (letra + 1);
         }
     }
+
+    int gcd(int a, int b) {
+        assert a >= 0 && b >= 0 : "'a'  e 'b'devem ser >=0";
+        while (b != 0) {
+            int resto = a % b;
+            a = b;
+            b = resto;
+        }
+        return a;
+    }
+    // int gcd(int a, int b) {
+    //
+    //    assert a >= 0 && b >= 0 : "a e b devem ser >= 0"; // opcional: garantir naturais
+    //
+    //
+    //    if (b == 0) return a; // casos de curto-circuito
+    //    if (a == 0) return b; // casos de curto-circuito
+    //
+    //    while (b != 0) {
+    //        int resti = a - b * (a / b); // equivalente a a % b sem usar %
+    //        a = b;
+    //        b = resto;
+    //    }
+    //    return a;
+    // }
 }
