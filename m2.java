@@ -244,7 +244,7 @@ class m2 {
     }
 
     int gcd(int a, int b) {
-        assert a >= 0 && b >= 0 : "'a'  e 'b'devem ser >=0";
+        assert a >= 0 && b >= 0 : "'a' e 'b'devem ser >=0";
         while (b != 0) {
             int resto = a % b;
             a = b;
