@@ -327,7 +327,7 @@ class m2 {
     //
     //
     //
-    // Solução interativa com ciclo 'for' ;
+    // Solução interativa com ciclo 'for' :
     //
     // int fib(int n) {
     //    if (n <= 1) return n;
