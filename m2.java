@@ -261,7 +261,7 @@ class m2 {
     //    if (a == 0) return b; // casos de curto-circuito
     //
     //    while (b != 0) {
-    //        int resti = a - b * (a / b); // equivalente a a % b sem usar %
+    //        int resto = a - b * (a / b); // equivalente a a % b sem usar %
     //        a = b;
     //        b = resto;
     //    }
