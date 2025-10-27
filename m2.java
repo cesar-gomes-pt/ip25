@@ -296,20 +296,30 @@ class m2 {
     // invertInt(1234)-> 4321 ou  invertInt(12345)-> 54321
     int fib(int n) {
         if (n <= 1) {
-            // Casos base para n = 0 e n = 1
             return n;
+        } else {
+            return fib(n - 1) + fib(n - 2);
         }
-        int termo_anterior = 0;
-        int termo_atual = 1;
-        int resultado = 0;
-        // começa a partir do segundo termo (índice 2)
-        int i = 2;
-        while (i <= n) {
-            resultado = termo_anterior + termo_atual;
-            termo_anterior = termo_atual;
-            termo_atual = resultado;
-            i++;
-        }
-        return resultado;
     }
+    // Solução alternativa mais complexa com recurso a um ciclo while :
+    //
+    // int fib(int n) {
+    //
+    //    if (n <= 1) { // Casos base para n = 0 e n = 1
+    //        return n;
+    //    }
+    //
+    //    int termo_anterior = 0;
+    //    int termo_atual = 1;
+    //    int resultado = 0;
+    //    int i = 2; // começa a partir do segundo termo (índice 2)
+    //
+    //    while (i <= n) {
+    //        resultado = termo_anterior + termo_atual;
+    //        termo_anterior = termo_atual;
+    //        termo_atual = resultado;
+    //        i++;
+    //    }
+    //    return resultado;
+    // }
 }
