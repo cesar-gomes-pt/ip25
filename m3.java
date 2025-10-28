@@ -3,6 +3,44 @@ class m3 {
     double absDiff(double a, double b) {
         return Math.abs(a - b);
     }
+
+    int gradeRound(int n) {
+        return (int) Math.round(n * 20.0 / 100.0);
+    }
+    // Solução Alternativa :
+    //
+    //
+    //  int gradeRound(int grade) {
+    //    double result = grade / 5.0;
+    //    return (int) Math.round(result);
+    //  }
+    //
+    //
+    // 1) Nota inteira em 0-20 (mais comum) : (int) Math.round(percent * 20.0 / 100.0);
+    //
+    //
+    // int percent = 79; // 79%
+    // int nota20 = (int) Math.round(percent * 20.0 / 100.0); // 16
+    // equivalente: (int) Math.round(percent / 5.0);
+    //
+    // 2) Se a percentagem é double (ex.: 79.3%) :
+    //
+    //
+    // double percent = 79.3;
+    // int nota20 = (int) Math.round(percent * 0.20); // 16
+    //
+    // 3) Manter 1 casa decimal em 0-20 (ex.: 15.9) :
+    //
+    //
+    // double percent = 79.3;
+    // double nota20_1cas = Math.round(percent * 0.20 * 10.0) / 10.0; // 15.9
+    //
+    //
+    // 4) Converter diretamente de valores brutos (0..100, não em "%") :
+    //
+    // int pontos = 79; // 0..100
+    // int nota20 = (int) Math.round(pontos / 5.0); // 16
+    //
 }
 
 class EvenOdd {
