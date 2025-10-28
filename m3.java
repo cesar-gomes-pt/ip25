@@ -178,3 +178,117 @@ class IrsHelper {
         return 0;
     }
 }
+
+class RandomInts {
+
+    static int random() {
+        return (int) (Math.random() * 1000000);
+    }
+
+    // Devolve um inteiro em [0, max[
+    static int randomUntil(int max) {
+        if (max < 0) {
+            throw new IllegalArgumentException("O valor máximo tem de ser zero ou positivo.");
+        }
+        return (int) (Math.random() * max);
+    }
+
+    // [min, max], com validação
+    static int randomWithin(int min, int max) {
+        if (min < max) {
+            return random();
+        } else {
+            throw new IllegalArgumentException("O valor mínimo tem de ser inferior ao valor máximo.");
+        }
+    }
+}
+
+class Divisors {
+
+    static int countDivisors(int n) {
+        int i = 1;
+        int divisor = 0;
+        while (i <= n) {
+            if (n % i == 0)
+                divisor++;
+            i++;
+        }
+        return divisor;
+    }
+
+    static int sumProperDivisors(int n) {
+        int i = 1;
+        int sum = 0;
+        while (i < n) {
+            if (n % i == 0)
+                sum += i;
+            i++;
+        }
+        return sum;
+    }
+
+    static boolean isPrime(int n) {
+        return (countDivisors(n) == 2);
+    }
+}
+
+class PrimeNumbers {
+
+    // Conta quantos primos existem em [2, n]
+    static int countPrimes(int n) {
+        int count = 0;
+        int i = 2;
+        while (i <= n) {
+            if (Divisors.isPrime(i)) {
+                // usa a isPrime do módulo importado
+                count++;
+            }
+            i++;
+        }
+        return count;
+    }
+
+    // Verifica se existe primo no intervalo aberto (min, max)
+    static boolean existsPrimeBetween(int min, int max) {
+        // opcional: garantir ordem
+        if (min > max) {
+            int tmp = min;
+            min = max;
+            max = tmp;
+        }
+        int i = min + 1;
+        while (i < max) {
+            if (Divisors.isPrime(i)) {
+                // usa a isPrime do módulo importado
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+}
+// Solução mais simples:
+//
+// class Primes {
+//    static int countPrimes(int max) {
+//        int i = 1;
+//        int c = 0;
+//        while(i <= max) {
+//            if(Divisors.isPrime(i)) {
+//                c = c + 1;
+//            }
+//            i = i + 1;
+//        }
+//        return c;
+//    }
+//    static boolean existsPrimeBetween(int min, int max) {
+//        int i = min + 1;
+//        while(i < max) {
+//            if(Divisors.isPrime(i)) {
+//                return true;
+//            }
+//            i = i + 1;
+//        }
+//        return false;
+//    }
+// }
