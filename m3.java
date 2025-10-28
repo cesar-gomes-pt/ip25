@@ -89,6 +89,28 @@ class m3 {
         // }
         //
     }
+
+    boolean isBetween(int n, int a, int b) {
+        int min = Math.min(a, b);
+        int max = Math.max(a, b);
+        return (n > min && n < max);
+        // 1. Descobre o limite inferior e superior:
+        //
+        // min = Math.min(a, b)
+        // max = Math.max(a, b)
+        //
+        // 2. Compara n com os limites:
+        //
+        // n > min → significa que está acima do menor limite
+        //
+        // n < max → significa que está abaixo do maior limite
+        //
+        // 3. Ambas as condições devem ser verdadeiras:
+        //
+        // (n > min && n < max) retorna true se n estiver estritamente dentro do intervalo.
+        //
+        // Se estiver igual a um dos limites, retorna false (porque o intervalo é aberto ]a,b[.
+    }
 }
 
 class EvenOdd {
