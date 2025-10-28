@@ -125,6 +125,17 @@ class m3 {
         // }
         //
     }
+
+    int firstDigit(int n) {
+        // garante que o número é positivo
+        n = Math.abs(n);
+        if (n < 10) {
+            // caso base: só resta um dígito
+            return n;
+        } else {
+            return firstDigit(n / 10);
+        }
+    }
 }
 
 class EvenOdd {
