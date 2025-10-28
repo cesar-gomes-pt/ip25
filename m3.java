@@ -7,6 +7,7 @@ class m3 {
     int gradeRound(int n) {
         return (int) Math.round(n * 20.0 / 100.0);
     }
+
     // Solução Alternativa :
     //
     //
@@ -41,6 +42,15 @@ class m3 {
     // int pontos = 79; // 0..100
     // int nota20 = (int) Math.round(pontos / 5.0); // 16
     //
+    int flipCoin(int a, int b) {
+        double r = Math.random();
+        if (r < 0.5) {
+            // Solução Alternativa : return r < 0.5 ? a : b;
+            return a;
+        } else {
+            return b;
+        }
+    }
 }
 
 class EvenOdd {
