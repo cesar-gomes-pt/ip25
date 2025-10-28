@@ -111,6 +111,20 @@ class m3 {
         //
         // Se estiver igual a um dos limites, retorna false (porque o intervalo é aberto ]a,b[.
     }
+
+    boolean isPerfectSquare(int n) {
+        double square = Math.sqrt(n);
+        int square_number = (int) Math.floor(square);
+        return square * square == n;
+        //
+        // Solução mais simples :
+        //
+        // boolean isPerfectSquare(int n) {
+        //      double sqrt = Math.sqrt(n);
+        //      return sqrt == Math.floor(sqrt);
+        // }
+        //
+    }
 }
 
 class EvenOdd {
