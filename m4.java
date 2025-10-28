@@ -30,4 +30,13 @@ class m4 {
         // }
         //
     }
+
+    static void arrayOfDigits() {
+        int[] digits = new int[10];
+        int i = 0;
+        while (i < 10) {
+            digits[i] = i;
+            i++;
+        }
+    }
 }
