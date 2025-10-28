@@ -136,6 +136,42 @@ class m3 {
             return firstDigit(n / 10);
         }
     }
+
+    int factorial(int n) {
+        assert n >= 0 : "O número deve ser não negativo";
+        if (n == 0 || n == 1) {
+            // caso base
+            return 1;
+        } else {
+            // recursividade para n > 1 !
+            return n * factorial(n - 1);
+        }
+    }
+    // 1. Condição de paragem (caso base) :
+    //
+    //   Se n for 0 ou 1, devolve 1.
+    //
+    //   Isso evita chamadas infinitas e reflete a definição matemática.
+    //
+    // 2. Passo recursivo :
+    //
+    //   factorial(n) chama factorial(n - 1) até chegar ao caso base.
+    //
+    //   A cada chamada, multiplica o número atual pelo resultado do fatorial do anterior.
+    //
+    // 3. A asserção :
+    //
+    //    assert n >= 0 garante que não se tenta calcular o fatorial de um número negativo (que não é definido para inteiros negativos).
+    //
+    // Solução semelhante :
+    //
+    // int factorial(int n) {
+    //     if(n <= 1) {
+    //        return 1;
+    //     } else {
+    //        return n * factorial(n - 1);
+    //    }
+    // }
 }
 
 class EvenOdd {
