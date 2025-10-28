@@ -1,4 +1,8 @@
 class m3 {
+
+    double absDiff(double a, double b) {
+        return Math.abs(a - b);
+    }
 }
 
 class EvenOdd {
