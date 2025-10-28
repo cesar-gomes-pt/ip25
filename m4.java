@@ -39,4 +39,15 @@ class m4 {
             i++;
         }
     }
+
+    int[] naturals(int n) {
+        assert n >= 0 : "argumento não pode ser negativo";
+        int[] nats = new int[n];
+        int i = 0;
+        while (i < n) {
+            nats[i] = i + 1;
+            i++;
+        }
+        return nats;
+    }
 }
