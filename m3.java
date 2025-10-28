@@ -51,6 +51,44 @@ class m3 {
             return b;
         }
     }
+
+    char randomVowel() {
+        char[] vowel = { 'a', 'e', 'i', 'o', 'u' };
+        // é 5 porque temos 5 vogais
+        return vowel[(int) (Math.random() * 5)];
+        // Solução Alternativa :
+        //   char randomVowel() {
+        //    double r = Math.random();
+        //    if(r < .2) {
+        //        return 'a';
+        //    }
+        //    if(r < .4) {
+        //        return 'e';
+        //    }
+        //    if(r < .6) {
+        //        return 'i';
+        //    }
+        //    if(r < .8) {
+        //        return 'o';
+        //    }
+        //    return 'u';
+        //   }
+        //
+        // Função para devolver uma letra do alfabeto minúscula aleatória :
+        //
+        // char random alphaBet() {
+        //      char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        //      return alphabet[(int)(Math.random() * 26)];
+        // }
+        //
+        // Gerar automáticamente o "array" dentro do código Java (o resultado é igual ao array manual e ordenado em cima !) :
+        //
+        // char[] alphabet = new char[26];
+        //      for (int i = 0; i < 26; i++) {
+        //      alphabet[i] = (char) ('a' + i);
+        // }
+        //
+    }
 }
 
 class EvenOdd {
