@@ -61,6 +61,14 @@ class m5 {
         }
     }
 
+    void scaleArray(double[] array, double factor) {
+        // 1) percorre todas as posições do vetor, do índice 0 ao último
+        for (int i = 0; i < array.length; i++) {
+            // 2) multiplica o elemento atual pelo fator e guarda o resultado no próprio vetor
+            array[i] = array[i] * factor;
+        }
+    }
+
     static void constrain(double[] array, double minimum_interval, double maximum_interval) {
         // 1) percorre todas as posições do vetor, do índice 0 ao último
         for (int i = 0; i < array.length; i++) {
