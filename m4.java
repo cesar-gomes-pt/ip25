@@ -84,7 +84,7 @@ class m4 {
     // Passo 3. Se array[i] < array[i-1], encontrou uma inversão → retorna false.
     // Passo 4. Se terminar o for sem inversões, retorna true
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Nota Finais :
+    // Notas Finais :
     //
     // 1. Funciona para arrays vazios ([]) e de 1 elemento ([x]): retorna true.
     //
