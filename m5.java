@@ -38,4 +38,88 @@ class m5 {
             array[i] = array[i] * 2;
         }
     }
+
+    static void constrain(double[] array, double minimum_interval, double maximum_interval) {
+        // 1) percorre todas as posições do vetor, do índice 0 ao último
+        for (int i = 0; i < array.length; i++) {
+            // 2) se o valor atual for menor do que o limite inferior,
+            //    substitui-o pelo próprio limite inferior (clamp inferior)
+            if (array[i] < minimum_interval) {
+                array[i] = minimum_interval;
+                // 3) caso contrário, se for maior do que o limite superior,
+                //    substitui-o pelo limite superior (clamp superior)
+            } else if (array[i] > maximum_interval) {
+                array[i] = maximum_interval;
+            }
+            // 4) caso contrário (já está dentro do intervalo), não altera
+        }
+    }
+}
+
+class ArrayOrder {
+
+    static void swap(int[] array, int i, int j) {
+        // swap: troca os elementos nas posições i e j do array (in-place)
+        // 1) guarda temporariamente o valor na posição i
+        int modify = array[i];
+        // 2) coloca o valor da posição j na posição i
+        array[i] = array[j];
+        // 3) repõe, na posição j, o valor originalmente de i
+        array[j] = modify;
+    }
+
+    // invert: inverte a ordem dos elementos do array (in-place)
+    static void invert(int[] array) {
+        // 1) índice do fim do array (último elemento)
+        int j = array.length - 1;
+        // 2) número de trocas necessárias (metade do tamanho)
+        int ceil = array.length / 2;
+        // 3) percorre do início até ao meio (exclusive quando length é ímpar)
+        for (int i = 0; i < ceil; i++) {
+            // 4) troca o elemento do início (i) com o do fim (j)
+            swap(array, i, j);
+            // 5) move o índice do fim para a esquerda
+            j--;
+        }
+        // 6) fim: o array fica invertido; se o comprimento for ímpar, o do meio permanece
+    }
+}
+
+class Shift {
+
+    static void shiftLeft(int[] array) {
+        // 1) índice do último elemento
+        int lastIndex = array.length - 1;
+        // 2) guarda o primeiro valor (será colocado no fim)
+        int firstValue = array[0];
+        for (int i = 0; i <= lastIndex; i++) {
+            // 3) percorre todas as posições de 0 até lastIndex
+            if (i == lastIndex) {
+                // 4) caso especial: última posição
+                // 5) coloca o antigo primeiro valor no fim
+                array[i] = firstValue;
+            } else {
+                // 6) desloca cada elemento para a esquerda
+                array[i] = array[i + 1];
+            }
+        }
+    }
+
+    static void shiftRight(int[] array) {
+        // 1) índice do último elemento
+        int lastIndex = array.length - 1;
+        // 2) guarda o último valor (irá para o início)
+        int lastValue = array[lastIndex];
+        for (int i = lastIndex; i >= 0; i--) {
+            // 3) percorre de trás para a frente
+            if (i == 0) {
+                // 4) caso especial: primeira posição
+                // 5) coloca o antigo último valor no início
+                array[i] = lastValue;
+            } else {
+                // 6) desloca cada elemento para a direita
+                array[i] = array[i - 1];
+            }
+        }
+    }
 }
