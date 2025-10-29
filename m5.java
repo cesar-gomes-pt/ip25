@@ -51,6 +51,16 @@ class m5 {
         return doubled;
     }
 
+    void invertValues(boolean[] array) {
+        // 1) declara a variável de índice i
+        int i;
+        for (i = 0; i < array.length; i++) {
+            // 2) percorre o vetor do índice 0 até ao último
+            // 3) inverte o valor booleano: true -> false e false -> true !
+            array[i] = !(array[i]);
+        }
+    }
+
     static void constrain(double[] array, double minimum_interval, double maximum_interval) {
         // 1) percorre todas as posições do vetor, do índice 0 ao último
         for (int i = 0; i < array.length; i++) {
