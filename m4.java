@@ -328,6 +328,58 @@ class ArrayCopy {
     // copy([4,5]) → [4,5] (cópia igual)
 }
 
+class RandomArray {
+
+    // ---------------------------------------------
+    // 1) randomArray: constrói um vetor de comprimento n
+    //    preenchido com dígitos aleatórios no intervalo [0..9].
+    // ---------------------------------------------
+    static int[] randomArray(int n) {
+        // Validação: o comprimento não pode ser negativo
+        if (n < 0) {
+            throw new IllegalArgumentException("O comprimento deve ser >= 0");
+        }
+        // Cria o vetor de destino com n posições (inicialmente todas 0)
+        int[] a = new int[n];
+        // Índice de preenchimento
+        int i = 0;
+        // Preenche cada posição com um dígito aleatório 0..9
+        while (i < n) {
+            // Math.random() -> [0.0,1.0)
+            // * 10          -> [0.0,10.0)
+            // (int)         -> {0,1,2,3,4,5,6,7,8,9}
+            a[i] = (int) (Math.random() * 10);
+            i++;
+        }
+        // Devolve o vetor gerado
+        return a;
+    }
+
+    // ---------------------------------------------
+    // 2) randomIndex: devolve um índice aleatório válido
+    //    para o vetor dado (intervalo [0 .. length-1]).
+    // ---------------------------------------------
+    static int randomIndex(int[] array) {
+        // Validação: o vetor não pode ser nulo nem vazio
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("O vetor não pode ser nulo/vazio");
+        }
+        // Math.random() -> [0.0,1.0)
+        // * length      -> [0.0,length)
+        // (int)         -> {0,1,...,length-1}
+        return (int) (Math.random() * array.length);
+    }
+
+    // ---------------------------------------------
+    // 3) randomElement: devolve um elemento aleatório
+    //    do vetor, reutilizando randomIndex(array).
+    // ---------------------------------------------
+    static int randomElement(int[] array) {
+        // Sorteia um índice válido e usa-o para aceder ao elemento
+        return array[randomIndex(array)];
+    }
+}
+
 class doubleStats {
 
     // Conjunto de utilitários para vetores de double: min, max, sum, average :
