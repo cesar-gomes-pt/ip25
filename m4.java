@@ -51,7 +51,7 @@ class m4 {
         return nats;
     }
 
-    static boolean isOrdered(int[] array) {
+    boolean isOrdered(int[] array) {
         int i = 1;
         while (i < array.length) {
             if (array[i] < array[i - 1]) {
