@@ -39,6 +39,18 @@ class m5 {
         }
     }
 
+    int[] createDoubleArray(int[] array) {
+        // cria um novo vetor com o mesmo tamanho do original
+        int[] doubled = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            // percorre todas as posições do vetor original
+            // coloca no novo vetor o dobro do valor original
+            doubled[i] = array[i] * 2;
+        }
+        // devolve o novo vetor com todos os valores duplicados
+        return doubled;
+    }
+
     static void constrain(double[] array, double minimum_interval, double maximum_interval) {
         // 1) percorre todas as posições do vetor, do índice 0 ao último
         for (int i = 0; i < array.length; i++) {
