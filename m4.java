@@ -327,3 +327,53 @@ class ArrayCopy {
     //
     // copy([4,5]) → [4,5] (cópia igual)
 }
+
+class doubleStats {
+
+    static double min(double[] array) {
+        int size = array.length;
+        double min = array[0];
+        int i = 0;
+        while (i < size) {
+            if (i > 0) {
+                if (array[i] < min) {
+                    min = array[i];
+                }
+            }
+            i++;
+        }
+        return min;
+    }
+
+    static double max(double[] array) {
+        int size = array.length;
+        double max = array[0];
+        int i = 0;
+        while (i < size) {
+            if (i > 0) {
+                if (array[i] > max) {
+                    max = array[i];
+                }
+            }
+            i++;
+        }
+        return max;
+    }
+
+    static double sum(double[] array) {
+        int size = array.length;
+        double sum = 0.0;
+        int i = 0;
+        while (i < size) {
+            sum += array[i];
+            i++;
+        }
+        return sum;
+    }
+
+    static double average(double[] array) {
+        int size = array.length;
+        double average = sum(array);
+        return average / size;
+    }
+}
