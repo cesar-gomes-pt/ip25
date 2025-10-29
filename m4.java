@@ -183,6 +183,7 @@ class m4 {
         }
         return counter;
     }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //
     //Passo 1. int size = array.length; Guarda o tamanho do array para usar no laço (evita consultar length em cada iteração).
@@ -200,6 +201,66 @@ class m4 {
     //Passo 7. return counter; Depois de percorrer o array inteiro, devolve o número total de vezes que n apareceu.
     //
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    boolean areEqual(int[] a, int[] b) {
+        // 1) guarda o tamanho do array a
+        int size_a = a.length;
+        // 2) guarda o tamanho do array b
+        int size_b = b.length;
+        // 3) índice para percorrer os arrays
+        int i = 0;
+        if (size_a != size_b) {
+            // 4) se os tamanhos diferem, não podem ser iguais
+            return false;
+        }
+        while (i < size_a) {
+            // 5) percorre todas as posições válidas
+            if (a[i] != b[i]) {
+                // 6) se algum par de elementos diferir, os arrays não são iguais
+                return false;
+            }
+            // 7) avança para a próxima posição
+            i++;
+        }
+        // 8) terminou sem diferenças: arrays iguais
+        return true;
+        // Nota Importante : 2 arrays para serem considerado iguais tem de possuir 3 condiçoes:
+        //
+        // 1. Ser do mesmo tipo.
+        // 2. Ter mesmo tamanho
+        // 3. E os seus elementos serem iguais.
+        //
+    }
+
+    int[] merge(int[] left, int[] right) {
+        // comprimento do vetor left
+        int length_left = left.length;
+        // comprimento do vetor right
+        int length_right = right.length;
+        // tamanho total da concatenação
+        int total_length = length_left + length_right;
+        // cria vetor de destino com o tamanho final
+        int[] merged_array = new int[total_length];
+        // índice de iteração
+        int i = 0;
+        // copia os elementos de left para o início de merged_array
+        while (i < length_left) {
+            // coloca left[i] na mesma posição
+            merged_array[i] = left[i];
+            // avança o índice
+            i++;
+        }
+        // reinicia o índica para percorrer o vetor right
+        i = 0;
+        // copia os elementos de right a seguir aos de left
+        while (i < length_right) {
+            // desloca por length_left
+            merged_array[i + length_left] = right[i];
+            // avança o índice
+            i++;
+        }
+        // devolve o vetor concatenado !
+        return merged_array;
+    }
 }
 
 class ArrayCopy {
