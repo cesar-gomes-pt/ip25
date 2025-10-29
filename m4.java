@@ -330,50 +330,79 @@ class ArrayCopy {
 
 class doubleStats {
 
+    // Conjunto de utilitários para vetores de double: min, max, sum, average :
     static double min(double[] array) {
+        // 1) guarda o tamanho
         int size = array.length;
+        // 2) assume o 1.o elemento como mínimo
         double min = array[0];
+        // 3) índice de varrimento
         int i = 0;
         while (i < size) {
+            // 4) percorre todas as posições [0 .. size-1]
             if (i > 0) {
+                // 5) ignora a comparação quando i == 0 (opcional)
                 if (array[i] < min) {
+                    // 6) se encontrou valor menor que o atual mínimo
+                    // 7) atualiza o mínimo
                     min = array[i];
                 }
             }
+            // 8) avança para o próximo índice
             i++;
         }
+        // 9) devolve o mínimo encontrado
         return min;
     }
 
     static double max(double[] array) {
+        // 1) guarda o tamanho
         int size = array.length;
+        // 2) assume o 1.o elemento como máximo
         double max = array[0];
+        // 3) índice de varrimento
         int i = 0;
         while (i < size) {
+            // 4) percorre o array
             if (i > 0) {
+                // 5) evita comparar no i == 0 (opcional)
                 if (array[i] > max) {
+                    // 6) se encontrou valor maior que o atual máximo
+                    // 7) atualiza o máximo
                     max = array[i];
                 }
             }
+            // 8) próximo elemento
             i++;
         }
+        // 9) devolve o máximo encontrado
         return max;
     }
 
     static double sum(double[] array) {
+        // 1) tamanho do array
         int size = array.length;
+        // 2) acumulador da soma
         double sum = 0.0;
+        // 3) índice
         int i = 0;
         while (i < size) {
+            // 4) percorre todos os elementos
+            // 5) acumula o valor atual
             sum += array[i];
+            // 6) avança o índice
             i++;
         }
+        // 7) devolve a soma total
         return sum;
     }
 
     static double average(double[] array) {
+        // 1) número de elementos
         int size = array.length;
+        // 2) usa a função sum para obter o total
         double average = sum(array);
+        // 3) média = soma / tamanho
         return average / size;
     }
 }
