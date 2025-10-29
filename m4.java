@@ -64,6 +64,7 @@ class m4 {
         // percorreu tudo sem inversões, ou seja, está tudo ordenado !
         return true;
     }
+
     // Passo 1. Se o array tiver 0 ou 1 elemento, está ordenado por definição (o laço não executa e devolvemos true no fim).
     // Passo 2. Começa a verificação no segundo elemento (índice 1), porque vamos comparar cada elemento com o anterior.
     // Passo 3. Enquanto i < array.length, compara array[i] com array[i-1].
@@ -92,4 +93,52 @@ class m4 {
     //
     // 3. Para exigir ordem estritamente crescente (sem repetidos), use array[i] <= array[i - 1].
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    int[] inverted(int[] array) {
+        int[] new_array = new int[array.length];
+        int length = array.length;
+        int index = length - 1;
+        int i = 0;
+        while (i < length) {
+            new_array[i] = array[index];
+            i++;
+            index--;
+        }
+        return new_array;
+    }
+    // Passo 1. Cria um novo array new_array com o mesmo tamanho do array original, onde será guardado o resultado invertido.
+    // Passo 2. Guarda o comprimento em length para evitar chamar array.length repetidamente.
+    // Passo 3. Inicializa index = length - 1 para começar a ler o último elemento do array original.
+    // Passo 4. Inicializa o índice de escrita i = 0 para começar a preencher new_array do início.
+    // Passo 5. Entra no ciclo while (i < length) que vai percorrer todas as posições.
+    // Passo 6. Copia o elemento espelhado: new_array[i] = array[index]; Lê do fim do original (index) e escreve no início do novo (i).
+    // Passo 7. Avança os ponteiros em sentidos opostos: i++ (para a direita no novo) e index-- (para a esquerda no original).
+    // Passo 8. Quando i == length, o ciclo termina: todos os elementos foram copiados.
+    // Passo 9. Retorna new_array, que é o array original invertido.
+    //
+    // Observações: Funciona para arrays vazios e de 1 elemento (retorna o próprio array copiado/invertido).
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Solução Alternativa :
+    //
+    // int[] inverted(int[] array) {
+    //    int[] inv = new int[array.length];
+    //    int i = 0;
+    //    while(i < array.length) {
+    //        inv[i] = array[array.length - 1 - i];
+    //        i = i + 1;
+    //    }
+    //    return inv;
+    // }
+    // Passo 1. Cria inv com o mesmo tamanho do array original para guardar o resultado.
+    // Passo 2. Inicializa i = 0 como índice de escrita no array inv.
+    // Passo 3. Inicia o ciclo while (i < array.length) para percorrer todas as posições de 0 até length-1.
+    // Passo 4. Para cada i, calcula diretamente o índice espelhado do original: array.length - 1 - i. Ex.: para i=0 lê array[length-1];
+    //          para i=1 lê array[length-2], etc.
+    //
+    // Passo 5. Copia o valor espelhado: inv[i] = array[array.length - 1 - i];.
+    // Passo 6. Incrementa i (i = i + 1) para avançar no array de destino.
+    // Passo 7. Ao terminar o ciclo, inv contém o conteúdo de array invertido.
+    // Passo 8. Retorna inv.
+    //
+    // Observações: É uma forma mais compacta: dispensa a variável index, calculando o índice espelhado inline.
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
