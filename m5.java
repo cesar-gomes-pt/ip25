@@ -31,4 +31,11 @@ class m5 {
             s += i;
         }
     }
+
+    void doubleArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            // dobra o valor atual de cada posição do array antigo !
+            array[i] = array[i] * 2;
+        }
+    }
 }
