@@ -153,6 +153,7 @@ class m4 {
         }
         return false;
     }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     //
     // 1) começa a pesquisar desde o índice 0 -> int i = 0;
@@ -170,6 +171,35 @@ class m4 {
     // 7) terminou o ciclo sem encontrar: não existe -> return false;
     //
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    int count(int[] array, int n) {
+        int size = array.length;
+        int counter = 0;
+        int i = 0;
+        while (i < size) {
+            if (array[i] == n) {
+                counter++;
+            }
+            i++;
+        }
+        return counter;
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //Passo 1. int size = array.length; Guarda o tamanho do array para usar no laço (evita consultar length em cada iteração).
+    //
+    //Passo 2. int counter = 0; Inicializa o contador de ocorrências de n no array.
+    //
+    //Passo 3. int i = 0; Começa a percorrer o array pelo índice inicial.
+    //
+    //Passo 4. while (i < size) { ... }. Itera por todos os índices válidos (0 até size-1).
+    //
+    //Passo 5. if (array[i] == n) { counter++; }. Se o elemento da posição atual é igual a n, incrementa o contador (encontrou mais uma ocorrência).
+    //
+    //Passo 6. i++; Avança para o próximo índice.
+    //
+    //Passo 7. return counter; Depois de percorrer o array inteiro, devolve o número total de vezes que n apareceu.
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 class ArrayCopy {
