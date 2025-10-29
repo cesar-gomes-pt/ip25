@@ -142,3 +142,65 @@ class m4 {
     // Observações: É uma forma mais compacta: dispensa a variável index, calculando o índice espelhado inline.
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
+
+class ArrayCopy {
+
+    static int[] copyNewSize(int[] source_array, int n) {
+        int size = source_array.length;
+        int i = 0;
+        int[] targer_array = new int[n];
+        while (i < n) {
+            if (i < size) {
+                targer_array[i] = source_array[i];
+            } else {
+                targer_array[i] = 0;
+            }
+            i++;
+        }
+        return targer_array;
+    }
+
+    // Função - copyNewSize(int[] source_array, int n) :
+    //
+    // Passo 1. int size = source_array.length; Guarda o comprimento do array de origem para acesso rápido.
+    //
+    // Passo 2. int i = 0; Inicializa o índice que vai percorrer a posição de escrita no array destino.
+    //
+    // Passo 3. int[] target_array = new int[n]; Cria o array de destino com tamanho pedido n. Por omissão, está preenchido com zeros.
+    //
+    // Passo 4. while (i < n) { ... } Itera por todas as posições do array destino (de 0 a n-1).
+    //
+    // Passo 5. if (i < size) { target_array[i] = source_array[i]; }. Enquanto houver elemento correspondente no array de origem (i.e., i ainda é um índice válido em source_array), copia esse elemento.
+    //
+    // Passo 6. else { target_array[i] = 0; }. Se i já ultrapassou o tamanho do array de origem (ou seja, n > size), preenche com 0 (padding).
+    //
+    // Passo 7. i++; Avança para a próxima posição do array destino.
+    //
+    // Passo 8. return target_array; Depois de preencher n posições, devolve o novo array.
+    //
+    // Comportamento resumido :
+    //
+    // Se n == size: devolve uma cópia exata.
+    //
+    // Se n < size: devolve uma cópia truncada (só os primeiros n elementos).
+    //
+    // Se n > size: devolve uma cópia com padding de zeros no fim.
+    static int[] copy(int[] source_array) {
+        return copyNewSize(source_array, source_array.length);
+    }
+    // Função - copy(int[] source_array) :
+    //
+    // Passo 1. Lê o tamanho do array de origem: source_array.length.
+    //
+    // Passo 2. Chama copyNewSize(source_array, source_array.length). Pede uma cópia do mesmo tamanho → o resultado é uma cópia fiel do array original.
+    //
+    // Passo 3. Devolve o array copiado.
+    //
+    // Exemplos rápidos :
+    //
+    // copyNewSize([1,2,3], 5) → [1,2,3,0,0] (padding)
+    //
+    // copyNewSize([1,2,3], 2) → [1,2] (truncado)
+    //
+    // copy([4,5]) → [4,5] (cópia igual)
+}
