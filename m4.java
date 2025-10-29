@@ -105,6 +105,7 @@ class m4 {
         }
         return new_array;
     }
+
     // Passo 1. Cria um novo array new_array com o mesmo tamanho do array original, onde será guardado o resultado invertido.
     // Passo 2. Guarda o comprimento em length para evitar chamar array.length repetidamente.
     // Passo 3. Inicializa index = length - 1 para começar a ler o último elemento do array original.
@@ -141,6 +142,34 @@ class m4 {
     //
     // Observações: É uma forma mais compacta: dispensa a variável index, calculando o índice espelhado inline.
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    boolean contains(int[] array, int n) {
+        int i = 0;
+        int size = array.length;
+        while (i < size) {
+            if (array[i] == n) {
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // 1) começa a pesquisar desde o índice 0 -> int i = 0;
+    //
+    // 2) guarda o tamanho do array (evita ler length a cada volta) -> int size = array.length;
+    //
+    // 3) percorre o array enquanto houver elementos -> while (i < size)
+    //
+    // 4) compara o elemento atual com o valor procurado -> if (array[i] == n)
+    //
+    // 5) se encontrou, termina já: existe no array -> return true;
+    //
+    // 6) avança para o próximo índice -> i++;
+    //
+    // 7) terminou o ciclo sem encontrar: não existe -> return false;
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 class ArrayCopy {
