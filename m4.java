@@ -223,12 +223,15 @@ class m4 {
         }
         // 8) terminou sem diferenças: arrays iguais
         return true;
-        // Nota Importante : 2 arrays para serem considerado iguais tem de possuir 3 condiçoes:
+        /////////////////////////////////////////////////////////////////////////////////////////////
+        //
+        // Nota Importante : 2 arrays para serem considerado iguais tem de possuir 3 condições:
         //
         // 1. Ser do mesmo tipo.
         // 2. Ter mesmo tamanho
         // 3. E os seus elementos serem iguais.
         //
+        /////////////////////////////////////////////////////////////////////////////////////////////
     }
 
     int[] merge(int[] left, int[] right) {
