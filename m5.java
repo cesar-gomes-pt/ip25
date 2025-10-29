@@ -69,6 +69,17 @@ class m5 {
         }
     }
 
+    void replace(char[] letters, char find, char replace) {
+        // percorre todas as posições do vetor
+        for (int i = 0; i < letters.length; i++) {
+            // se o caractere atual for igual ao que queremos encontrar
+            if (letters[i] == find) {
+                // substitui pelo novo caractere
+                letters[i] = replace;
+            }
+        }
+    }
+
     static void constrain(double[] array, double minimum_interval, double maximum_interval) {
         // 1) percorre todas as posições do vetor, do índice 0 ao último
         for (int i = 0; i < array.length; i++) {
