@@ -171,6 +171,57 @@ class ArrayOrder {
     }
 }
 
+class shuffle {
+
+    static void randomSwap(int[] array) {
+        int i = RandomInts.randomUntil(array.length);
+        int j = RandomInts.randomUntil(array.length);
+        ArrayOrder.swap(array, i, j);
+    }
+
+    static void shuffle(int[] array) {
+        for (int i = array.length - 1; i > 0; i--) {
+            int r = RandomInts.randomWithin(0, i);
+            ArrayOrder.swap(array, r, i);
+        }
+    }
+}
+
+class RandomInts {
+
+    static int random() {
+        return (int) (Math.random() * 1000000);
+    }
+
+    static int randomUntil(int max) {
+        assert max > 0;
+        return (int) (Math.random() * max);
+    }
+
+    static int randomWithin(int min, int max) {
+        assert min < max;
+        return min + randomUntil(max - min + 1);
+    }
+}
+
+// Solução Proposta !
+//
+// class ArrayShuffle {
+//
+//     static void randomSwap(int[] array) {
+//         int i = RandomInts.randomUntil(array.length); // índice aleatório em [0..length-1]
+//         int j = RandomInts.randomUntil(array.length); // outro índice aleatório em [0..length-1]
+//         ArrayOrder.swap(array, i, j);                 // troca in-place os elementos nas posições i e j
+//     }
+//
+//     static void shuffle(int[] array) {
+//         // Fisher-Yates: percorre de trás para a frente, fixando cada posição i
+//         for (int i = array.length - 1; i > 0; i--) {  // i desce do último índice até 1
+//             int r = RandomInts.randomWithin(0, i);    // escolhe r uniformemente em [0..i]
+//             ArrayOrder.swap(array, r, i);             // coloca um elemento aleatório do prefixo [0..i] na posição i
+//         }                                             // no fim, o array é uma permutação aleatória uniforme
+//     }
+// }
 class Shift {
 
     static void shiftLeft(int[] array) {
