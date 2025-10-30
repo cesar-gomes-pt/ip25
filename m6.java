@@ -1,4 +1,31 @@
 class m6 {
+
+    static int longestLineLength(int[][] m) {
+        // guarda o maior comprimento encontrado até agora
+        int max = 0;
+        for (int i = 0; i < m.length; i++) {
+            // percorre todas as linhas da matriz
+            // comprimento (número de colunas) da linha i
+            int len = m[i].length;
+            if (len > max) {
+                // se esta linha é maior do que o máximo atual...
+                // ...atualiza o máximo
+                max = len;
+            }
+        }
+        // devolve o comprimento da linha mais longa (0 se matriz vazia)
+        return max;
+    }
+    // int longestLineLength(int[][] m) {
+    //    assert m.length > 0;                 // garante que a matriz tem pelo menos 1 linha (evita acesso a m[0])
+    //
+    //    int max = m[0].length;               // inicia o máximo com o comprimento da 1.a linha
+    //    for (int i = 1; i < m.length; i++)   // percorre as restantes linhas (da 2.a em diante)
+    //        if (m[i].length > max)           // se a linha atual for mais comprida que o máximo atual...
+    //            max = m[i].length;           // ...atualiza o máximo
+    //
+    //    return max;                          // devolve o maior comprimento encontrado
+    // }
 }
 
 class MatrixUtil {
