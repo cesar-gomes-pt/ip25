@@ -93,6 +93,38 @@ class m5 {
         }
     }
 
+    void replaceLast(char[] letters, char find, char replace) {
+        // 1) percorre o vetor de trás para a frente:
+        //    começa no último índice (length - 1) e vai até 0, inclusive
+        for (int i = letters.length - 1; i >= 0; i--) {
+            // 2) se o elemento atual for igual ao caractere que procuramos...
+            if (letters[i] == find) {
+                // 3) ...substitui-o pelo novo caractere
+                letters[i] = replace;
+                // 4) e termina imediatamente:
+                //    como percorremos de trás para a frente, esta é a ÚLTIMA ocorrência
+                return;
+            }
+        }
+    }
+
+    // Solução proposta :
+    //
+    // void replaceLast(char[] letters, char find, char replace) {
+    //
+    //    // percorre o vetor de trás para a frente: começa no último índice
+    //
+    //    for (int i = letters.length - 1; i >= 0; i--)
+    //
+    //        // se o caractere na posição i for o que procuramos...
+    //
+    //        if (letters[i] == find) {
+    //
+    //            letters[i] = replace;         // ...substitui-o
+    //
+    //            return;                       // e termina: sendo de trás para a frente, é a ÚLTIMA ocorrência
+    //        }
+    // }
     static void constrain(double[] array, double minimum_interval, double maximum_interval) {
         // 1) percorre todas as posições do vetor, do índice 0 ao último
         for (int i = 0; i < array.length; i++) {
