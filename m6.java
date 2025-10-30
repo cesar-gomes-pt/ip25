@@ -29,6 +29,7 @@ class m6 {
         // devolve o comprimento da linha mais longa (0 se matriz vazia)
         return max;
     }
+
     // int longestLineLength(int[][] m) {
     //    assert m.length > 0;                 // garante que a matriz tem pelo menos 1 linha (evita acesso a m[0])
     //
@@ -39,6 +40,23 @@ class m6 {
     //
     //    return max;                          // devolve o maior comprimento encontrado
     // }
+    static void createMatrix() {
+        int[][] m = new int[2][3];
+        // cria uma matriz de 2 linhas e 3 colunas (inicializada a zeros)
+        // 1) começa a sequência nos naturais a partir de 1
+        int value = 1;
+        for (int i = 0; i < 2; i++) {
+            // 2) percorre as linhas: i = 0, 1
+            for (int j = 0; j < 3; j++) {
+                // 3) percorre as colunas: j = 0, 1, 2
+                // 4) coloca o próximo número natural na posição (i, j)
+                m[i][j] = value;
+                // 5) avança para o número seguinte
+                value++;
+            }
+        }
+        // No final: m = [[1, 2, 3], [4, 5, 6]]
+    }
 }
 
 class MatrixUtil {
