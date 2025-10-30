@@ -151,6 +151,41 @@ class m6 {
         // devolve a matriz transposta
         return transposed;
     }
+
+    int[][] identityMatrix(int n) {
+        // garante dimensão válida
+        assert n >= 0;
+        // cria matriz n x n
+        int[][] identidade = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            // percorre as linhas
+            for (int j = 0; j < n; j++) {
+                // percorre as colunas
+                if (i == j) {
+                    // diagonal principal → 1
+                    identidade[i][j] = 1;
+                } else {
+                    // restante → 0
+                    identidade[i][j] = 0;
+                }
+            }
+        }
+        // devolve a matriz identidade
+        return identidade;
+    }
+    // Solução Proposta (mais simples) :
+    //
+    // int[][] identityMatrix(int n) {
+    //
+    //      assert n >= 0;                       // garante que a dimensão é válida (pode ser 0)
+    //
+    //      int[][] identidade = new int[n][n];  // cria matriz n×n inicializada a 0 por omissão
+    //
+    //      for (int i = 0; i < n; i++)          // percorre as posições da diagonal principal
+    //          identidade[i][i] = 1;            // define 1 na célula (i,i); restantes já são 0
+    //
+    //      return identidade;                   // devolve a matriz identidade construída
+    // }
 }
 
 class MatrixUtil {
