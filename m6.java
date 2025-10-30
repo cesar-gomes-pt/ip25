@@ -57,6 +57,26 @@ class m6 {
         }
         // No final: m = [[1, 2, 3], [4, 5, 6]]
     }
+
+    int[][] squareMatrixNaturals(int n) {
+        // garante que a dimensão é não-negativa (n pode ser 0)
+        assert n >= 0;
+        // 1) cria uma matriz quadrada n x n
+        int[][] m = new int[n][n];
+        // 2) começamos pelo natural 1
+        int value = 1;
+        for (int i = 0; i < n; i++) {
+            // 3) percorre todas as linhas e colunas da matriz
+            for (int j = 0; j < n; j++) {
+                // 4) atribui o número natural atual
+                m[i][j] = value;
+                // 5) incrementa para o próximo
+                value++;
+            }
+        }
+        // 6) devolve a matriz preenchida
+        return m;
+    }
 }
 
 class MatrixUtil {
