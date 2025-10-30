@@ -1,5 +1,18 @@
 class m6 {
 
+    static void readMatrix() {
+        int[][] m = { { 1, 2 }, { 3, 4, 5 }, { 6 } };
+        int sum = 0;
+        for (int i = 0; i < m.length; i++) {
+            // percorre todas as linhas
+            for (int j = 0; j < m[i].length; j++) {
+                // percorre os elementos de cada linha
+                // soma o valor na posição (i,j)
+                sum += m[i][j];
+            }
+        }
+    }
+
     static int longestLineLength(int[][] m) {
         // guarda o maior comprimento encontrado até agora
         int max = 0;
