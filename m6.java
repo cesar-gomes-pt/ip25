@@ -77,6 +77,24 @@ class m6 {
         // 6) devolve a matriz preenchida
         return m;
     }
+
+    void toAbsMatrix(int[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            // percorre todas as linhas da matriz
+            for (int j = 0; j < m[i].length; j++) {
+                // percorre todas as colunas da linha atual
+                // substitui o valor pelo seu valor absoluto
+                m[i][j] = Math.abs(m[i][j]);
+            }
+        }
+    }
+    // NOTAS IMPORTANTE :
+    //
+    // ✅ O método é void → altera a matriz diretamente, não retorna nova matriz
+    //
+    // ✅ Dois ciclos for percorrem todos os elementos
+    //
+    // ✅ Math.abs() converte valores negativos em positivos mantendo os positivos iguais
 }
 
 class MatrixUtil {
