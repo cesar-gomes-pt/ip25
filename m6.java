@@ -88,6 +88,7 @@ class m6 {
             }
         }
     }
+
     // NOTAS IMPORTANTE :
     //
     // ✅ O método é void → altera a matriz diretamente, não retorna nova matriz
@@ -95,6 +96,40 @@ class m6 {
     // ✅ Dois ciclos for percorrem todos os elementos
     //
     // ✅ Math.abs() converte valores negativos em positivos mantendo os positivos iguais
+    static int[] column(int[][] m, int colIndex) {
+        // número de linhas da matriz
+        int rows = m.length;
+        // vetor para guardar os valores da coluna
+        int[] result = new int[rows];
+        for (int i = 0; i < rows; i++) {
+            // percorre cada linha da matriz
+            // copia o valor da coluna desejada
+            result[i] = m[i][colIndex];
+        }
+        // devolve o vetor coluna
+        return result;
+    }
+    // Solução Proposta :
+    //
+    // int[] column(int[][] m, int colIndex) {
+    //     assert m.length > 0;                           // garante que há pelo menos 1 linha (matriz não vazia)
+    //
+    //     assert colIndex >= 0 && colIndex < m[0].length; // garante que o índice da coluna é válido para a 1.a linha
+    //
+    //     int[] col = new int[m.length];                 // cria o vetor resultado com tamanho igual ao no de linhas
+    //
+    //     for (int i = 0; i < m.length; i++)             // percorre todas as linhas da matriz
+    //         col[i] = m[i][colIndex];                   // copia o elemento da coluna colIndex na linha i para o resultado
+    //
+    //     return col;                                    // devolve o vetor com a coluna extraída
+    // }
+    // Notas rápidas :
+    //
+    // ✅     Assume implicitamente que todas as linhas têm a mesma quantidade de colunas (retangular).
+    //
+    // ✅     Se asserções estiverem desativadas (sem -ea), elas não correm - mas o código continua funcional.
+    //
+    // ✅     Para maior robustez, poderias verificar também que cada m[i] tem colIndex válido .
 }
 
 class MatrixUtil {
