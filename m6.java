@@ -109,6 +109,7 @@ class m6 {
         // devolve o vetor coluna
         return result;
     }
+
     // Solução Proposta :
     //
     // int[] column(int[][] m, int colIndex) {
@@ -130,6 +131,26 @@ class m6 {
     // ✅     Se asserções estiverem desativadas (sem -ea), elas não correm - mas o código continua funcional.
     //
     // ✅     Para maior robustez, poderias verificar também que cada m[i] tem colIndex válido .
+    int[][] transpose(int[][] m) {
+        // garante que existe pelo menos uma linha
+        assert m.length > 0;
+        // número de linhas da matriz original
+        int rows = m.length;
+        // número de colunas da matriz original
+        int cols = m[0].length;
+        // matriz transposta terá dimensão invertida
+        int[][] transposed = new int[cols][rows];
+        for (int i = 0; i < rows; i++) {
+            // percorre as linhas da matriz original
+            for (int j = 0; j < cols; j++) {
+                // percorre as colunas da matriz original
+                // troca linha por coluna
+                transposed[j][i] = m[i][j];
+            }
+        }
+        // devolve a matriz transposta
+        return transposed;
+    }
 }
 
 class MatrixUtil {
