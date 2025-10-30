@@ -171,7 +171,7 @@ class ArrayOrder {
     }
 }
 
-class shuffle {
+class Shuffle {
 
     static void randomSwap(int[] array) {
         int i = RandomInts.randomUntil(array.length);
