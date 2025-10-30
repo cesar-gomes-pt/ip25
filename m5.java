@@ -164,3 +164,61 @@ class Shift {
         }
     }
 }
+
+class BubbleSort {
+
+    // Ordena por ordem crescente usando ArrayOrder.swap
+    static void sort(int[] array) {
+        if (array == null || array.length < 2)
+            return;
+        int n = array.length;
+        while (true) {
+            // 1) nesta passada ainda não trocámos nada
+            boolean swapped = false;
+            for (int i = 1; i < n; i++) {
+                // 2) percorre pares adjacentes [i-1, i]
+                if (array[i - 1] > array[i]) {
+                    // 3) fora de ordem? troca
+                    ArrayOrder.swap(array, i - 1, i);
+                    // 4) houve troca neste passo
+                    swapped = true;
+                }
+            }
+            // 5) último elemento já está no lugar
+            n--;
+            // 6) sem trocas → já está ordenado
+            if (!swapped)
+                break;
+        }
+    }
+}
+// Solução proposta e mais simples !
+//
+// class ArraySort {
+//
+//     // bubble sort (crescente)
+//
+//      static void sort(int[] array) {
+//
+//      //Laço externo: define o limite superior j que vai diminuindo
+//
+//          for (int j = array.length - 1; j > 0; j--) {
+//
+//
+// Laço interno: percorre e compara pares adjacentes até j-1
+//
+//              for (int i = 0; i < j; i++) {
+//
+//      // Se o par está fora de ordem, troca-os
+//
+//                  if (array[i] > array[i + 1]) {
+//                     ArrayOrder.swap(array, i, i + 1);
+//                 }
+//             }
+//
+//      // No fim desta passada, o maior dos elementos remanescentes ficou em array[j]
+//
+//         }
+//     }
+// }
+//
