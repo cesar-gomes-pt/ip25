@@ -80,6 +80,19 @@ class m5 {
         }
     }
 
+    void replaceFirst(char[] letters, char find, char replace) {
+        // Percorre o vetor desde o início
+        for (int i = 0; i < letters.length; i++) {
+            // Se encontrar o caractere procurado...
+            if (letters[i] == find) {
+                // ...substitui pela nova letra
+                letters[i] = replace;
+                // E sai imediatamente: só a primeira ocorrência é alterada !
+                return;
+            }
+        }
+    }
+
     static void constrain(double[] array, double minimum_interval, double maximum_interval) {
         // 1) percorre todas as posições do vetor, do índice 0 ao último
         for (int i = 0; i < array.length; i++) {
