@@ -173,6 +173,7 @@ class m6 {
         // devolve a matriz identidade
         return identidade;
     }
+
     // Solução Proposta (mais simples) :
     //
     // int[][] identityMatrix(int n) {
@@ -186,6 +187,47 @@ class m6 {
     //
     //      return identidade;                   // devolve a matriz identidade construída
     // }
+    int[][] sum(int[][] a, int[][] b) {
+        // as matrizes devem ter o mesmo no de linhas
+        assert a.length == b.length;
+        // e o mesmo no de colunas
+        assert a.length == 0 || a[0].length == b[0].length;
+        // número de linhas da matriz
+        int rows = a.length;
+        // número de colunas (se houver linhas)
+        int cols = (rows > 0 ? a[0].length : 0);
+        // cria matriz para guardar a soma
+        int[][] sum_matrice = new int[rows][cols];
+        // percorre toda a matriz
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                // soma elemento a elemento
+                sum_matrice[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        // devolve a matriz resultante da soma da matriz 'a' peça matriz 'b'
+        return sum_matrice;
+    }
+    // Solução Proposta :
+    //
+    // int[][] sum(int[][] a, int[][] b) {
+    //     assert a.length == b.length;                // garante que têm o mesmo no de linhas
+    //     assert a.length > 0;                        // exige que não sejam matrizes vazias (há pelo menos 1 linha)
+    //     assert a[0].length == b[0].length;          // garante que a 1a linha tem o mesmo no de colunas (e assume retangularidade)
+    //
+    //     int[][] s = new int[a.length][a[0].length]; // cria a matriz resultado com as mesmas dimensões de a e b
+    //
+    //     for (int i = 0; i < a.length; i++)          // percorre cada linha
+    //         for (int j = 0; j < a[i].length; j++)   // percorre cada coluna da linha i
+    //             s[i][j] = a[i][j] + b[i][j];        // soma elemento a elemento e guarda em s
+    //
+    //     return s;                                   // devolve a matriz soma
+    // }
+    // ✅    Esta solução assume matrizes retangulares (todas as linhas com o mesmo comprimento).
+    //
+    // ✅    As assert falham apenas se executares com -ea; caso contrário, são ignoradas.
+    //
+    // ✅    Se quisermos permitir matrizes vazias, remove assert a.length > 0 e trata cols com um ternário (ex.: cols = a.length == 0 ? 0 : a[0].length).
 }
 
 class MatrixUtil {
